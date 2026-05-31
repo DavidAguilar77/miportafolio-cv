@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="Curriculum Vitae" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David Aguilar | Portafolio Profesional</title>
     <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -77,6 +77,11 @@
             color: var(--primary);
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
         nav a {
             font-size: 1rem;
             color: var(--text-color);
@@ -84,6 +89,7 @@
             font-weight: 500;
             margin-left: 2rem;
             transition: .3s;
+            white-space: nowrap;
         }
 
         nav a:hover, nav a.active {
@@ -485,14 +491,39 @@
             color: var(--text-muted);
         }
 
-        /* --- RESPONSIVIDAD --- */
+        /* --- RESPONSIVIDAD REVISADA Y OPTIMIZADA --- */
         @media (max-width: 768px) {
-            header { padding: 1.3rem 5%; }
-            section { padding: 80px 5%; }
-            nav { display: none; } 
-            #inicio { flex-direction: column-reverse; text-align: center; gap: 2rem; }
-            .home-img img { width: 280px; height: 280px; }
+            header { 
+                flex-direction: column;
+                padding: 1rem 5%; 
+                gap: 0.8rem;
+            }
+            
+            nav { 
+                display: flex; 
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+                width: 100%;
+            } 
+
+            nav a {
+                font-size: 0.85rem;
+                margin-left: 0;
+                padding: 0.3rem 0.6rem;
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 4px;
+            }
+
+            section { padding: 150px 5% 60px 5%; }
+            .heading { font-size: 2rem; margin-bottom: 2rem; }
+            
+            #inicio { text-align: center; }
+            .home-content h1 { font-size: 2.5rem; }
+            
             .about-container { flex-direction: column; text-align: center; }
+            .about-img img { width: 220px; height: 220px; }
+            
             .timeline::after { left: 31px; }
             .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
             .timeline-item::after { left: 22px; }
